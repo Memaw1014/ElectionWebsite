@@ -7,7 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class members_model extends Model
 {
-    use HasFactory;
-    protected $table = "members";
-    protected $fillable = ['barangay', 'sitio','precint#','sitio_leader','firstname','lastname','middlename','nickname','age','fb_account','contact','address','occupation'];
+    protected $table = 'members';
+
+    protected $fillable = [
+        'barangay', 'sitio', 'precint#', 'sitio_leader', 'firstname', 'middlename', 'nickname',
+        'lastname', 'age', 'fb_account', 'contact', 'address', 'occupation',
+        'voted_on_2023', 'organization', 'beneficiary',
+    ];
+
+    // If your checkbox fields are JSON columns, you might need to cast them
+    protected $casts = [
+        'voted_on_2023' => 'array',
+        'organization' => 'array',
+        'beneficiary' => 'array',
+    ];
 }

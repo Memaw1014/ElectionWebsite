@@ -115,7 +115,7 @@
             @csrf
             <div id="form">
                 <label for="barangay" class="">Barangay</label>
-                <input type="text" name="barangay" placeholder="Barangay"required>
+                <input type="text" name="barangay" placeholder="Barangay" pattern="^(Adlaon|Agsungot|Apas|Babag|Bacayan|Banilad|Basak Pardo|Basak San Nicolas|Binaliw|Bonbon|budla-an|Buhisan|Bulacao|Buot-Taup Pardo|Busay|Calamba|Cambinocot|Capitol Site|Central|Kamputhaw|Carreta|Cogon Pardo|Cogon Ramos|Day-as|Duljo|Ermita|Guadalupe|Guba|Hippodromo|Inayawan|Kalubihan|Kalunasan|Kamagayan|Kasambagan|Kinasang-an Pardo|Labangon|Lahug|Lorega|Lusaran|Luz|Mabini|Mabolo|Malubog|Mambaling|Pahina Central|Pahina San Nicolas|Pamutan|Pardo|Pari-an|Paril|Pasil|Pit-os|Pulangbato|Pung-ol-Sibugay|Punta Princesa|Quiot Pardo|Sambag 1|Sambag 2|San Antonio|San Jose|San Nicolas Central|San Roque|Santa Cruz|Sapangdaku|Sawang Calero|Sinsin|Sirao|Suba Poblacion|Sudlon 1|Sudlon 2|Tabunan|Tagbao|Talamban|Taptap|Tajero|Tinago|Tisa|To-ong Pardo|T. Padilla|Zapatera)$" title="Please enter a valid barangay,with the proper format" required>
 
                 <label for="sitio">Sitio Name:</label>
                 <input type="text" name="sitio" placeholder="Sitio"required>
@@ -157,25 +157,28 @@
             <div class="checkbox-container">
                 <!-- Checkbox 1 -->
                 <div class="checkbox-label">
-                    <label for="q1" class="q1">Have you voted in the last 2023 Barangay Elections?</label>
-                    <input type="checkbox" name="yes">YES
-                    <input type="checkbox" name="no">NO
+                    <label for="voted_on_2023" class="q1">Have you voted in the last 2023 Barangay Elections?
+                        <input type="checkbox" name="voted_on_2023[]" id="yes1" value ="YES">YES
+                        <input type="checkbox" name="voted_on_2023[]" id="no1" value ="NO">NO
+                    </label>
+                    
                 </div>
 
                 <!-- Checkbox 2 -->
                 <div class="checkbox-label">
-                    <label for="q2" id="q1">What organization are you a member of? Please check on the box that applies</label>
-                    <input type="checkbox" name="erpat">ERPAT
-                    <input type="checkbox" name="kalipi">KALIPI
-                    <input type="checkbox" name="pwd">PWD
-                    <input type="checkbox" name="senior">SENIOR CITIZEN
+                    <label for="Organization" id="q1">What organization are you a member of? Please check on the box that applies
+                        <input type="checkbox" name="organization[]" id="erpat" value="ERPAT">ERPAT
+                        <input type="checkbox" name="organization[]" id="kalipi" value="KALIPI">KALIPI
+                        <input type="checkbox" name="organization[]" id="pwd" value="PWD">PWD
+                        <input type="checkbox" name="organization[]" id="senior" value="SENIOR CITIZER">SENIOR CITIZEN
+                    </label>
                 </div>
 
                 <!-- Checkbox 3 -->
                 <div class="checkbox-label">
-                    <label for="q3">Have you been a beneficiary of TUPAD, TAPAT, LIVELIHOOD PROGRAMS, etc.?</label>
-                    <input type="checkbox" id="yes">YES
-                    <input type="checkbox" id="no">NO
+                    <label for="beneficiary">Have you been a beneficiary of TUPAD, TAPAT, LIVELIHOOD PROGRAMS, etc.?</label>
+                    <input type="checkbox" name="beneficiary[]" id="yes2" value="YES">YES
+                    <input type="checkbox" name="beneficiary[]" id="no2"value="NO">NO
                 </div>
 
                 <!-- Checkbox 4 -->

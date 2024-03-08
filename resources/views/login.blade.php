@@ -53,6 +53,9 @@
             max-width: 250px; 
             height: auto;
       }
+      .alert-danger{
+        color:red;
+      }
     </style>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
@@ -61,8 +64,14 @@
   <img src="/images/ku-yogi-mi.png" alt="baw" id="ku-yogi-mi">
   <img src="/images/logo.png" alt="Extra Image" id = "logo">
   </div>
+  
     <div class="container">
-        <form id="loginForm" action="{{ route('login') }}" method="post">
+            @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+                <form id="loginForm" action="{{ route('login') }}" method="post">
             @csrf
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required />

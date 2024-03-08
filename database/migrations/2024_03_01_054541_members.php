@@ -18,14 +18,17 @@ return new class extends Migration
             $table->string('precint#');
             $table->string('sitio_leader');
             $table->string('firstname');
-            $table->string('lastname');
             $table->string('middlename');
             $table->string('nickname');
+            $table->string('lastname');
             $table->string('age');
             $table->string('fb_account');
             $table->string('contact');
             $table->string('address');
             $table->string('occupation');
+            $table->json('voted_on_2023');
+            $table->json('organization');
+            $table->json('beneficiary');
             $table->timestamps();
         });
     }

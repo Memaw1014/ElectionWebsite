@@ -28,31 +28,31 @@ class view_controller extends Controller
         return view('form');
     }
     public function store(Request $request)
-{
-    $data = $request->validate([
-        'barangay' => 'required',
-        'sitio' => 'required',
-        'precint#' => 'required',
-        'sitio_leader' => 'required',
-        'firstname' => 'required',
-        'lastname' => 'required',
-        'middlename' => 'required',
-        'nickname' => 'required',
-        'age' => 'required',
-        'fb_account' => 'required',
-        'contact' => 'required',
-        'address' => 'required',
-        'occupation' => 'required',
+    {
+        $data = $request->validate([
+            'barangay' => 'required',
+            'sitio' => 'required',
+            'precint#' => 'required',
+            'sitio_leader' => 'required',
+            'firstname' => 'required',
+            'middlename' => 'required',
+            'lastname' => 'required',
+            'nickname'=> 'required',
+            'age' => 'required',
+            'fb_account' => 'required',
+            'contact' => 'required',
+            'address' => 'required',
+            'occupation' => 'required',
+            'voted_on_2023' => 'array', // Assuming 'Voted_on_2023' is an array
+            'organization' => 'array', // Assuming 'Organization' is an array
+            'beneficiary' => 'array', // Assuming 'Beneficiary' is an array
+        ]);
 
-        
-    ]);
+        // You can store the form data in the database
+        members_model::create($data);
 
-    members_model::create($data);
-
-    return redirect()->route('route'); 
-
-    
-}
+        return redirect()->route('route'); // Replace 'your-route-name' with the desired route
+    }
     public function table()
         {
             $members = table_model::all();
@@ -68,6 +68,7 @@ class view_controller extends Controller
     {
         $contact = $request->input('contact');
         $barangay = $request->input('barangay');
+        $organization = $request->input('organization');
 
         $query = table_model::query();
 
@@ -77,6 +78,9 @@ class view_controller extends Controller
 
         if ($barangay) {
             $query->where('barangay', 'like', "%$barangay%");
+        }
+        if($organization){
+            $query->where('organization','=', $organization);
         }
 
         $members = $query->get();

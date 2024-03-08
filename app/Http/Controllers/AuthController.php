@@ -21,7 +21,7 @@ class AuthController extends Controller
             return redirect()->route('table');
         }
 
-        return redirect()->route('login')->with('error', 'Invalid login credentials');
+        return redirect()->route('login')->with('error', 'Login Unrecognize');
     }
 
     public function showRegistrationForm()
