@@ -22,7 +22,7 @@
             padding: 15px 20px; 
             font-size: 40px;
             border: none;
-            border-radius: 50px;
+            border-radius: 0px;
             cursor: pointer;
             
         }
@@ -49,7 +49,7 @@
 <body>
     <div>
      <img src="/images/logo.png" alt="Extra Image" id = "logo">
-     <img src="/images/front_page_bg.jpg" alt="Extra Image" id = "frontpage">
+     <img src="/images/front_page_bg.PNG" alt="Extra Image" id = "frontpage">
     </div>
 
     <a href="{{ route('route') }}"><button>Be a Volunteer Now</button></a>

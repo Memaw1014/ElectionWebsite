@@ -80,7 +80,7 @@ class view_controller extends Controller
             $query->where('barangay', 'like', "%$barangay%");
         }
         if($organization){
-            $query->where('organization','=', $organization);
+            $query->where('organization','like', "%$organization%");
         }
 
         $members = $query->get();

@@ -33,8 +33,8 @@
     <h1>Members List</h1>
 
     <form action="{{ route('members.search') }}" method="GET">
-        <label for="name">Search by Contact#:</label>
-        <input type="text" id="name" name="contact" placeholder="Enter Contact#">
+        <label for="contact">Search by Contact#:</label>
+        <input type="text" id="contact" name="contact" placeholder="Enter Contact#">
 
         <label for="barangay">Search by Barangay:</label>
         <input type="text" id="barangay" name="barangay" placeholder="Enter barangay">
@@ -42,10 +42,10 @@
         <label for="organization">Select Organization:</label>
             <select id="organization" name="organization">
                 <option value="">Organization</option>
-                <option value="erpat">ERPAT</option>
-                <option value="kalipi">KALIPI</option>
-                <option value="pwd">PWD</option>
-                <option value="senior">SENIOR CITIZEN</option>
+                <option value="ERPAT">ERPAT</option>
+                <option value="KALIPI">KALIPI</option>
+                <option value="PWD">PWD</option>
+                <option value="SENIOR CITIZEN">SENIOR CITIZEN</option>
             </select>
 
         <button type="submit">Search</button>
